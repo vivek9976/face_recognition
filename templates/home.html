@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href  = "/static/images/img_logo.ico">
+    <title>Home</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+          }
+
+          .container 
+          {
+            background-image: url('/static/images/main_background.jpg');
+            background-size: cover;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+          }
+          
+          .box 
+          {
+            border-radius: 10px;
+            width: 50%;
+            height: 70%;
+            background: #f0f0f0;
+            box-shadow:  0 0 0 #cccccc,
+                         0 0 0 #ffffff,
+                          10px 10px 10px #cccccc inset,
+                          -10px -10px 10px #ffffff inset;
+            
+          }
+      
+          
+
+        center
+        {
+            margin-top: 5%;
+            margin-left: 35%;
+            padding-top: 3%;
+            padding-bottom: 3%;
+            width: 30%;
+            border: 10px solid #205375;
+            border-radius: 0.6rem;
+            align-items: center;
+        }
+
+        p
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 3rem;
+        }
+
+        .relative_box
+        {
+            margin-top: 12%;
+            position: fixed;
+            width: 100vw;
+            text-align: center;
+        }
+        
+        a
+        {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 2rem;
+            margin: 20px;
+            padding: 10px;
+        }
+
+        a:link {    
+            color: #112B3C;
+            text-decoration: none;
+            border-bottom: none;
+        }
+        a:visited {  
+            color: #205375;
+        }
+        a:hover {    
+            color: #43919B;
+            border-bottom: none;
+            border: 2px solid lightgray;
+        }
+        a:active {
+            color: #143F6B;
+        }
+
+        </style>
+</head>
+
+<body>
+    <div class="relative_box">
+        <p>Welcome to high security bank</p>
+        <center>
+            <a href="{{ url_for('login') }}">Login Page</a><br><br><br>
+            <a href="{{ url_for('register') }}">Update password</a><br>
+        </center>
+    </div>
+
+    <div class="container">
+      <div class="box">
+      </div>
+    </div>
+
+</body>
+
+</html>

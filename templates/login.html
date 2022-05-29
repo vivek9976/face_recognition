@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/images/img_logo.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+
+    <title>Login</title>
+
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            min-height: 100vh;
+            font-family: 'Jost', sans-serif;
+            background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+        }
+        #chk{
+            display: none;
+        }
+        input{
+            width: 60%;
+            height: 20px;
+            background: #e0dede;
+            justify-content: center;
+            display: flex;
+            margin: 20px auto;
+            padding: 10px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+        }
+       
+        .login{
+            height: 460px;
+            background: #eee;
+            border-radius: 60% / 10%;
+            transform: translateY(-180px);
+            transition: .8s ease-in-out;
+        }
+        .login label{
+            color: #573b8a;
+            transform: scale(.6);
+        }
+        
+        #chk:checked ~ .login{
+            transform: translateY(-500px);
+        }
+        #chk:checked ~ .login label{
+            transform: scale(1);	
+        }
+        #chk:checked ~ .signup label{
+            transform: scale(.6);
+        }
+        .btn
+        {
+            margin-top: 40px;
+            height: 40px;
+            border-radius: 20px;
+            background-color: #24243e;
+        }
+        .btn:hover
+        {
+            background-color: #302b63;
+        }
+        p
+        {
+            margin-top: 5%;
+            margin-left: 38%;
+            position: fixed;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 3rem;
+        }
+
+        form
+        {
+            margin-top: 15%;
+            margin-left: 30%;
+            border: 10px solid lightslategrey;
+            width: 35%;
+            height: 65%;
+            padding: 2.5%
+        }
+
+        
+    </style>
+
+</head>
+
+<body>
+
+  
+    <p>Login to the system</p><br>
+    <form method="POST" action="">
+        
+        {{ form.hidden_tag() }}
+        {{ form.username }}
+        {{ form.password }}
+        {{ form.submit (class = "btn") }}
+        <a href="{{ url_for('register') }}">forgot password?</a>
+    </form>
+
+</body>

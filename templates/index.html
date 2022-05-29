@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/styleindex.css') }}">
+    <link rel="icon" href="/static/images/img_logo.ico">
+ </head>
+  <body>
+    <main class="app">
+        <center> 
+            
+            <img src="{{ url_for('video_feed') }}">
+        </center>
+       
+        <div class="boxes">
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+    </main>
+    <script>
+      function detectedFace() {
+        console.log("Called!")
+        if(document.body.dataset.grExtInstalled == '')
+          window.location.href = "/success";
+      }
+      window.addEventListener('load', 
+        function() { 
+          console.log("On load!");
+          // setInterval(detectedFace, 500);
+        }, false);
+    </script>
+    </body>
+  
+</html>
